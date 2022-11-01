@@ -3,12 +3,6 @@ const app = require('../lib/app');
 
 const { zodiacs } = require('../lib/zodiacs-data');
 
-// describe('example test - you should probably update me', () => {
-//   it('home route should return hello world', async () => {
-//     const resp = await request(app).get('/');
-//     expect(resp.text).toEqual('hello world!');
-//   });
-// });
 describe('zodiacs routes', () => {
   it('/zodiacs should return a list of zodiac', async () => {
     const res = await request(app).get('/zodiacs');
@@ -26,5 +20,18 @@ describe('zodiacs routes', () => {
       symbol: 'Bull',
     };
     expect(res.body).toEqual(taurus);
+  });
+});
+
+const { horoscopes } = require('../lib/horoscopes-data.js');
+
+describe('horoscopes routes', () => {
+  it('/horoscopes/:sign should return horoscope detail', async () => {
+    const res = await request(app).get('/horoscopes/aries');
+    const aries = {
+      name: 'aries',
+      horoscope: 'aries horoscope',
+    };
+    expect(res.body).toEqual(aries);
   });
 });
