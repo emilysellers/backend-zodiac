@@ -17,4 +17,14 @@ describe('zodiacs routes', () => {
     });
     expect(res.body).toEqual(expected);
   });
+  it('/zodiacs/:id should return zodiac detail', async () => {
+    const res = await request(app).get('/zodiacs/11');
+    const taurus = {
+      id: '11',
+      name: 'taurus',
+      dates: 'Apr 20 - May 20',
+      symbol: 'Bull',
+    };
+    expect(res.body).toEqual(taurus);
+  });
 });
