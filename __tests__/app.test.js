@@ -30,7 +30,8 @@ describe('horoscopes routes', () => {
     const res = await request(app).get('/horoscopes/aries');
     const aries = {
       sign: 'aries',
-      horoscope: 'aries horoscope',
+      horoscope:
+        'Privacy soothes and comforts. Get your thoughts and plans in order. Put away things from. Prepare for what is ahead. Clean and clear space.',
     };
     expect(res.body).toEqual(aries);
   });
