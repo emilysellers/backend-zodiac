@@ -29,7 +29,7 @@ describe('horoscopes routes', () => {
   it('/horoscopes/:sign should return horoscope detail', async () => {
     const res = await request(app).get('/horoscopes/aries');
     const aries = {
-      name: 'aries',
+      sign: 'aries',
       horoscope: 'aries horoscope',
     };
     expect(res.body).toEqual(aries);
